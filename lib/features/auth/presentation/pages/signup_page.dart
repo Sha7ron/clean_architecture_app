@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:untitled/core/common/widgets/loader.dart';
 import 'package:untitled/core/theme/app_pallete.dart';
 import 'package:untitled/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:untitled/features/auth/presentation/pages/login_page.dart';
@@ -39,10 +40,9 @@ class _SignupPageState extends State<SignupPage> {
           },
           builder: (context, state){
             if(state is AuthLoading){
-
+              const Loader();
             }
-          },
-          return : Form(
+          return Form(
             key: formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +106,8 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ],
             ),
-          ),
+          );
+          },
         ),
       ),
     );
